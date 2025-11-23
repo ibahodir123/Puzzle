@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duel Puzzle 60 – Frontend Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="logo">DUEL PUZZLE 60</div>
+      <div class="rating">Rating: <span id="ratingValue">1240</span></div>
+    </header>
+
+    <main>
+      <section id="lobbyScreen" class="screen active">
+        <div class="card">
+          <div class="logo big">DUEL PUZZLE 60</div>
+          <div class="cta">
+            <button id="playBtn" class="primary">PLAY</button>
+          </div>
+          <div class="row nav">
+            <button class="ghost">Battle Pass</button>
+            <button class="ghost">Shop</button>
+            <button class="ghost">Profile</button>
+          </div>
+          <button class="secondary">Invite Friends</button>
+        </div>
+      </section>
+
+      <section id="matchScreen" class="screen">
+        <div class="hud">
+          <div class="pill">Timer: <span id="timer">60</span>s</div>
+          <div class="pill">Score: <span id="score">0</span></div>
+          <div class="pill">Multiplier: <span id="multiplier">x1.0</span></div>
+        </div>
+
+        <div id="board" class="board" aria-label="Match-3 board"></div>
+
+        <div class="hud bottom">
+          <button id="backToLobby" class="ghost">Lobby</button>
+          <button id="restart" class="secondary">Restart</button>
+        </div>
+      </section>
+
+      <section id="endScreen" class="screen overlay">
+        <div class="card endcard">
+          <div class="title">YOU WIN!</div>
+          <div class="end-metrics">
+            <div>Score: <span id="finalScore">0</span></div>
+            <div>+22 ELO (placeholder)</div>
+          </div>
+          <div class="row nav">
+            <button id="playAgain" class="primary">Play Again</button>
+            <button id="toLobby" class="secondary">Lobby</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
